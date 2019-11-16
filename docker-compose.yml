@@ -16,13 +16,13 @@ services:
       - DB_USER=postgres
       - DB_PASS=postgres
       - DB_PORT=5432
+    links:
+      - cites_db
     depends_on:
       - cites_db
 
   cites_db:
     image: postgres:11.2-alpine
-    ports:
-      - 5432:5432
     environment:
       - POSTGRES_DB=cites
       - POSTGRES_USER=postgres

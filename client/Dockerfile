@@ -4,9 +4,9 @@ WORKDIR /app
 
 COPY package.json /app/package.json
 
-RUN npm install create-react-app react-scripts -g --silent
-
 RUN npm install --silent
+
+RUN npm install create-react-app react-scripts -g --silent
 
 # start app
 CMD ["npm", "start"]
