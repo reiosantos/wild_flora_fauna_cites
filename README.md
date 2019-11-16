@@ -1,4 +1,4 @@
-# CET - CITES-plants E-commerce Tracker
+# CET - (CITES-plants E-commerce Tracker)
 
 This is a monitoring system that will flag the sale of any endangered plant species on the E-commerce platforms thus creating awareness to the wildlife authority.
 
