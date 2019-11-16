@@ -94,3 +94,27 @@ a {
   border-radius:0;
   transition:background 0.20s linear;
 }
+
+#nav-tabContent {
+  padding-top: 0 !important;
+  margin-top: 28px;
+}
+
+#nav-home {
+  overflow: scroll;
+  max-height: 52.5rem !important;
+}
+
+.detailList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.detailList li {
+  border-bottom: none;
+  font-size: 1.5rem !important;
+}
+.detailList span {
+  font-size: 1.5rem !important;
+}
