@@ -10,6 +10,8 @@ django = "==2.2"
 django-extensions = "*"
 werkzeug = "*"
 djangorestframework = "*"
+python-decouple = "*"
+psycopg2-binary = "*"
 
 [requires]
 python_version = "3.7"
