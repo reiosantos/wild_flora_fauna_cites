@@ -18,6 +18,7 @@ services:
       - DB_PORT=5432
     depends_on:
       - cites_db
+
   cites_db:
     image: postgres:11.2-alpine
     ports:
@@ -26,3 +27,14 @@ services:
       - POSTGRES_DB=cites
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
+  client:
+    build: ./client
+    image: react-client
+    container_name: client
+    volumes:
+      - ./client:/app
+    ports:
+      - 3000:3000
+    environment:
+      - REACT_APP_API_URL=http://cites:8000
