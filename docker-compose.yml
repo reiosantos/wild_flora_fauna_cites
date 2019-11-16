@@ -20,8 +20,6 @@ services:
       - cites_db
   cites_db:
     image: postgres:11.2-alpine
-    ports:
-      - 5432:5432
     environment:
       - POSTGRES_DB=cites
       - POSTGRES_USER=postgres

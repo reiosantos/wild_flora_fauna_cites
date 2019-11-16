@@ -8,8 +8,8 @@ class TaxonConcept(models.Model):
     scientific_name = models.CharField(max_length=100)
     appendix = models.CharField(max_length=5)
     author = models.CharField(max_length=100)
-    country_distribution = ArrayField(ArrayField(models.CharField(max_length=100, blank=True)))
-    distribution_iso_codes = ArrayField(ArrayField(models.CharField(max_length=10, blank=True)))
+    country_distribution = ArrayField(models.CharField(max_length=100), blank=True)
+    distribution_iso_codes = ArrayField(models.CharField(max_length=10), blank=True)
 
     def __str__(self):
-        return self.taxon_id
+        return str(self.taxon_id)
