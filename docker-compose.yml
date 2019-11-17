@@ -1,11 +1,11 @@
-version: '3.7'
+version: '3.3'
 
 services:
   cites:
     build:
       context: .
       dockerfile: Dockerfile
-    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver_plus 0.0.0.0:8000"
+    command: bash -c "pipenv install && python manage.py makemigrations && python manage.py migrate && python manage.py runserver_plus 0.0.0.0:8000"
     volumes:
       - './:/usr/src/app'
     ports:
@@ -16,11 +16,25 @@ services:
       - DB_USER=postgres
       - DB_PASS=postgres
       - DB_PORT=5432
+    links:
+      - cites_db
     depends_on:
       - cites_db
+
   cites_db:
     image: postgres:11.2-alpine
     environment:
       - POSTGRES_DB=cites
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
+
+  client:
+    build: ./client
+    image: react-client
+    container_name: client
+    volumes:
+      - ./client:/app
+    ports:
+      - 3000:3000
+    environment:
+      - REACT_APP_API_URL=http://cites:8000
