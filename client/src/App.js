@@ -8,9 +8,10 @@ class App extends Component {
         search: null
     };
     
-    search(event) {
+    search = (event) => {
         event.preventDefault();
-        this.setState({search: event.target.value})
+        const value = document.getElementById('search').value;
+        this.setState({search: value})
     }
     
     render() {

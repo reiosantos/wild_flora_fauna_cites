@@ -1,16 +1,19 @@
-body, html, #root {
-  font-family: Arial, Roboto, "Times New Roman", "Courier New", Courier, Verdana, Georgia, serif;
-  font-size: 12px;
+body,
+html,
+#root {
+  font-family: Arial, Roboto, 'Times New Roman', 'Courier New', Courier, Verdana, Georgia, serif;
+  font-size: 14px;
   height: 100%;
 }
 
-body, #root {
+body,
+#root {
   display: flex;
   flex-direction: column;
 }
 
 body {
-  background-image: url("chris-abney-qLW70Aoo8BE-unsplash.jpg");
+  background-image: url('chris-abney-qLW70Aoo8BE-unsplash.jpg');
   background-attachment: fixed;
   /*background-clip: text;*/
   background-size: cover;
@@ -23,6 +26,10 @@ a {
   color: white;
 }
 
+.navbar-nav a.nav-link {
+  font-size: 18px;
+  font-weight: bold;
+}
 .form-control:focus {
   box-shadow: none;
 }
@@ -33,7 +40,8 @@ a {
   font-style: italic;
 }
 
-.rounded-pill, .rounded-pill input {
+.rounded-pill,
+.rounded-pill input {
   border-radius: 1em !important;
   /*background: #4e555b;*/
 }
@@ -46,53 +54,53 @@ a {
   border-top-left-radius: 10px;
 }
 
-.content-div nav > .nav.nav-tabs{
-
+.content-div nav > .nav.nav-tabs {
   border: none;
-  color:#fff;
-  /*background:#272e38;*/
-  border-radius:0;
-
+  color: #fff;
+  background: #ffc10782;
+  border-radius: 0;
+}
+.content-div nav > div a.nav-item.nav-link {
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 .content-div nav > div a.nav-item.nav-link,
-.content-div nav > div a.nav-item.nav-link.active
-{
+.content-div nav > div a.nav-item.nav-link.active {
   border: none;
   padding: 18px 25px;
   color: #000000;
   /*background:#272e38;*/
-  border-radius:0;
+  border-radius: 0;
 }
 .content-div nav > div a.nav-item.nav-link.active {
   background: #38744b;
 }
 
-.content-div nav > div a.nav-item.nav-link.active:after
-{
-  content: "";
+.content-div nav > div a.nav-item.nav-link.active:after {
+  content: '';
   position: relative;
   bottom: -60px;
   left: -10%;
   border: 15px solid transparent;
-  border-top-color: #38744b ;
+  border-top-color: #38744b;
 }
-.content-div .tab-content{
+.content-div .tab-content {
   background: #fdfdfd;
   line-height: 25px;
   border: 1px solid #ddd;
-  border-top:5px solid #38744b;
-  border-bottom:5px solid #38744b;
-  padding:30px 25px;
+  border-top: 5px solid #38744b;
+  border-bottom: 5px solid #38744b;
+  padding: 30px 25px;
 }
 
 .content-div nav > div a.nav-item.nav-link:hover,
-.content-div nav > div a.nav-item.nav-link:focus
-{
+.content-div nav > div a.nav-item.nav-link:focus {
   border: none;
   background: #38744b;
-  color:#fff;
-  border-radius:0;
-  transition:background 0.20s linear;
+  color: #fff;
+  border-radius: 0;
+  transition: background 0.2s linear;
 }
 
 #nav-tabContent {
@@ -119,6 +127,19 @@ a {
   font-size: 1.5rem !important;
 }
 
-.side-img {
+.shadow-sm a {
+  color: #38744b;
+}
 
+.accordion h3 {
+  margin-left: 1rem;
+  color: #ff0000a1;
+}
+.medicines h3 {
+  margin-left: 1rem;
+}
+
+.medicines .table thead {
+  background-color: #38744b;
+  font-size: 18px;
 }

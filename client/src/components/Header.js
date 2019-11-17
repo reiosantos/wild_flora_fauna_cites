@@ -21,7 +21,7 @@ export const Header = ({ searchFn }) => (
 			<form action="#!" className="col-sm-12 col-lg-8" onSubmit={searchFn}>
 				<div className="input-group border rounded-pill bg-dark p-0">
 					<input type="search" id="search" name="search"
-						   aria-describedby="button-addon3"
+							 aria-describedby="button-addon3"
 						   placeholder="What're you searching for?"
 						   className="form-control bg-none border-0"/>
 					<div className="input-group-append border-0">

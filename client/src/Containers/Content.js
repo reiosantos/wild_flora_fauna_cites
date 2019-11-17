@@ -1,6 +1,7 @@
-import React from "react"
-import {Flags} from './Flags';
-import { Listings } from "./Listings"
+import React from 'react';
+import { Flags } from './Flags';
+import { Listings } from './Listings';
+import { Medicines } from './medicines';
 
 export const Content = ({ search }) => {
   return (
@@ -16,7 +17,7 @@ export const Content = ({ search }) => {
             aria-controls="nav-home"
             aria-selected="true"
           >
-            Listings
+            At Glance
           </a>
           <a
             className="nav-item nav-link"
@@ -27,7 +28,18 @@ export const Content = ({ search }) => {
             aria-controls="nav-contact"
             aria-selected="false"
           >
-            At Glance
+            Listings
+          </a>
+          <a
+            className="nav-item nav-link"
+            id="nav-medicine-tab"
+            data-toggle="tab"
+            href="#nav-medicine"
+            role="tab"
+            aria-controls="nav-medicine"
+            aria-selected="false"
+          >
+            MPNS
           </a>
         </div>
       </nav>
@@ -38,7 +50,7 @@ export const Content = ({ search }) => {
           role="tabpanel"
           aria-labelledby="nav-home-tab"
         >
-          <Listings search={search} />
+          <Flags />
         </div>
         <div
           className="tab-pane fade"
@@ -46,9 +58,17 @@ export const Content = ({ search }) => {
           role="tabpanel"
           aria-labelledby="nav-profile-tab"
         >
-        <Flags/>
+          <Listings search={search} />
+        </div>
+        <div
+          className="tab-pane fade"
+          id="nav-medicine"
+          role="tabpanel"
+          aria-labelledby="nav-medicine-tab"
+        >
+          <Medicines/>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};

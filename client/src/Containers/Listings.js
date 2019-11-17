@@ -1,8 +1,8 @@
-import React, { Component, Fragment } from "react"
-import { Listing } from "../components/Listing"
+import React, { Component, Fragment } from 'react';
+import { Listing } from '../components/Listing';
 
 export class Listings extends Component {
-  url = "http://localhost:8000/cites/taxon_concepts/";
+  url = 'http://localhost:8000/cites/taxon_concepts/';
 
   state = {
     results: []
@@ -10,30 +10,39 @@ export class Listings extends Component {
 
   constructor(props) {
     super(props);
-    this.fetchData()
+    this.fetchData();
   }
 
-  fetchData() {
-    if (this.props.search) {
-      this.url = this.url + "?search=" + this.props.search
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.search !== this.props.search) {
+      this.fetchData(nextProps.search);
     }
-    fetch(this.url)
+  }
+
+  fetchData(search) {
+    var url = this.url;
+    if (search) {
+      url = this.url + '?search=' + search.trim();
+    }
+    fetch(url)
       .then(res => res.json())
       .then(response => {
-        this.setState({ results: response.results })
+        this.setState({ results: response.results });
       })
       .catch(error => {
-        console.log(error)
-      })
+        console.log(error);
+      });
   }
 
   render() {
     return (
       <Fragment>
         <div className="accordion" id="accordionExample">
-          {this.state.results.map(res => (<Listing result={res} />))}
+          {this.state.results.map(res => (
+            <Listing result={res} />
+          ))}
         </div>
       </Fragment>
-    )
+    );
   }
 }
