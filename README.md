@@ -6,7 +6,8 @@ This is a monitoring system that will flag the sale of any endangered plant spec
 These instructions should help you run the code on your machine.
 
 ### Prerequisites
-The code is ran using [Docker](https://www.docker.com/).
+- The code is ran using [Docker](https://www.docker.com/).
+- Ensure to have [Nodejs](https://nodejs.org/en/docs/) installed.
 
 ### Installing locally from github
 
@@ -53,9 +54,17 @@ http://localhost:8000/cites/taxon_concepts/
 
 - Use filter to filter by scientific name
 
+- Once the app runs the UI can be accessed on
+```
+http://localhost:3000
+```
+
 ## Resources Used
 - [Python](https://www.python.org/)
 - [Postgres](https://www.postgresql.org/)
 - [Docker](https://www.docker.com/)
 - [Django](https://www.djangoproject.com/)
 - [Django Rest Framework](https://www.django-rest-framework.org/)
+- [NodeJs](https://nodejs.org/en/docs/)
+- [React](https://reactjs.org/docs/getting-started.html)
+- [Bootstrap 4](https://getbootstrap.com/docs/4.1/getting-started/introduction/)
